@@ -16,5 +16,7 @@ For this project, two separate versions of the Unity environment was provided by
 - The first version contains a single agent.
 - The second version contains 20 identical agents, each with its own copy of the environment.
 
-In this project, the code was generated using the second version of the environment (with 20 Agents) using DDPG algorithm.
+In this project, the code was generated using the second version of the environment (with 20 Agents) using DDPG algorithm. Because it has been shown that having multiple copies of the same agent sharing experience can accelerate learning. [You can find more information from here.](https://ai.googleblog.com/2016/10/how-robots-can-acquire-new-skills-from.html) 
+
+The barrier for solving the second version of the environment is slightly different, to take into account the presence of many agents. In particular, your agents must get an average score of +30 (over 100 consecutive episodes, and over all agents). Specifically, after each episode, we add up the rewards that each agent received (without discounting), to get a score for each agent. This yields 20 (potentially different) scores. We then take the average of these 20 scores.This yields an average score for each episode (where the average is over all 20 agents). The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30. 
 
