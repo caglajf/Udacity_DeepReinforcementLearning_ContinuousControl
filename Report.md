@@ -39,6 +39,8 @@ max_t=1000              # maximum number of steps to train per episode,
 
 The Actor Neural Networks use the following architecture :
 
+<img width="440" alt="image" src="https://user-images.githubusercontent.com/51778059/154122259-1c4c73f4-1be2-4d15-9db2-d4b7d1c76eaa.png">
+
 Input Layer (33) ->
 Fully Connected Hidden Layer (400 nodes, Batch Normlization, relu activation) ->
 Fully Connected Hidden Layer (300 nodes, relu activation) ->
