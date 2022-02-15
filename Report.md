@@ -20,3 +20,36 @@ In this project, I implemented an off-policy method called Deep Deterministic Po
 The pseudocode of DDPG algorith can be found below. 
 
 <img width="413" alt="image" src="https://user-images.githubusercontent.com/51778059/154117715-e74d8f58-e755-47ba-9e3c-158d0f90628b.png">
+
+<h4>Hyperparameters:</h4>
+BUFFER_SIZE = int(1e6)  # replay buffer size
+BATCH_SIZE = 128        # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR_ACTOR = 1e-4         # learning rate of the actor 
+LR_CRITIC = 1e-3        # learning rate of the critic
+WEIGHT_DECAY = 0        # L2 weight decay
+LEARN_EVERY = 20        # update the networks 10 times after every 20 timesteps
+LEARN_NUMBER = 10       # update the networks 10 times after every 20 timesteps
+EPSILON = 1.0           # noise factor
+EPSILON_DECAY = 0.999999  # noise factor decay
+
+n_episodes=1000         # maximum number of episodes to train
+max_t=1000              # maximum number of steps to train per episode,
+
+The Actor Neural Networks use the following architecture :
+
+Input Layer (33) ->
+Fully Connected Hidden Layer (400 nodes, Batch Normlization, relu activation) ->
+Fully Connected Hidden Layer (300 nodes, relu activation) ->
+Ouput Layer (4 nodes, tanh activation)
+
+The Critic Neural Networks use the following architecture :
+
+Input Layer (33) ->
+Fully Connected Hidden Layer (400 nodes, Batch Normlization, relu activation) ->
+Fully Connected Hidden Layer (300+4 nodes [including actions], relu activation) ->
+Ouput Layer (1 node, no activation)
+
+
+<h2>Results</h2>
