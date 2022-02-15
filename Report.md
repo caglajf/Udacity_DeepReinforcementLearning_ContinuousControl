@@ -15,6 +15,7 @@ This yields an average score for each episode (where the average is over all 20 
 In this project, I preferred to use distributed training which contains 20 identical agents, each with its own copy of the environment.The advantage of my approach is use multiple (non-interacting, parallel) copies of the same agent to distribute the task of gathering experience.
 
 <h2>Learning Algorithm</h2>
-In this project, I implemented an off-policy method called Deep Deterministic Policy Gradient (DDPG). This method is an actor-critic, model-free algorithm based on the deterministic policy gradient that can operate over continuous action spaces. [REF]   Our contribution here is to provide modifications to DPG, inspired by
-the success of DQN, which allow it to use neural network function approximators to learn in large
-state and action spaces online. 
+In this project, I implemented an off-policy method called Deep Deterministic Policy Gradient (DDPG). This method is an actor-critic, model-free algorithm based on the deterministic policy gradient that can operate over continuous action spaces. [REF]   This method was developed to provide modifications to deterministic policy gradient (DPG), inspired by the success of Deep Q-Network (DQN), which allow it to use neural network function approximators to learn in large state and action spaces online. 
+
+The pseudocode of DDPG algorith can be found below. 
+
