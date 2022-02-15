@@ -19,3 +19,4 @@ In this project, I implemented an off-policy method called Deep Deterministic Po
 
 The pseudocode of DDPG algorith can be found below. 
 
+<img width="413" alt="image" src="https://user-images.githubusercontent.com/51778059/154117715-e74d8f58-e755-47ba-9e3c-158d0f90628b.png">
