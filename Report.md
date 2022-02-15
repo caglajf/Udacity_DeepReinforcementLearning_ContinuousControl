@@ -15,7 +15,7 @@ This yields an average score for each episode (where the average is over all 20 
 In this project, I preferred to use distributed training which contains 20 identical agents, each with its own copy of the environment.The advantage of my approach is use multiple (non-interacting, parallel) copies of the same agent to distribute the task of gathering experience.
 
 <h2>Learning Algorithm</h2>
-In this project, I implemented an off-policy method called Deep Deterministic Policy Gradient (DDPG). This method is an actor-critic, model-free algorithm based on the deterministic policy gradient that can operate over continuous action spaces. [REF]   This method was developed to provide modifications to deterministic policy gradient (DPG), inspired by the success of Deep Q-Network (DQN), which allow it to use neural network function approximators to learn in large state and action spaces online. 
+In this project, I implemented an off-policy method called Deep Deterministic Policy Gradient (DDPG). This method is an actor-critic, model-free algorithm based on the deterministic policy gradient that can operate over continuous action spaces. [REF](https://arxiv.org/pdf/1509.02971.pdf)   This method was developed to provide modifications to deterministic policy gradient (DPG), inspired by the success of Deep Q-Network (DQN), which allow it to use neural network function approximators to learn in large state and action spaces online. 
 
 The pseudocode of DDPG algorith can be found below. 
 
@@ -38,8 +38,6 @@ n_episodes=1000         # maximum number of episodes to train
 max_t=1000              # maximum number of steps to train per episode,
 
 The Actor Neural Networks use the following architecture :
-
-<img width="440" alt="image" src="https://user-images.githubusercontent.com/51778059/154122259-1c4c73f4-1be2-4d15-9db2-d4b7d1c76eaa.png">
 
 Input Layer (33) ->
 Fully Connected Hidden Layer (400 nodes, Batch Normlization, relu activation) ->
