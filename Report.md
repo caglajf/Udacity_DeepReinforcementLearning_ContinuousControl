@@ -21,35 +21,29 @@ The pseudocode of DDPG algorith can be found below.
 
 <img width="413" alt="image" src="https://user-images.githubusercontent.com/51778059/154117715-e74d8f58-e755-47ba-9e3c-158d0f90628b.png">
 
-<h4>Hyperparameters:</h4>
-BUFFER_SIZE = int(1e6)  # replay buffer size
-BATCH_SIZE = 128        # minibatch size
-GAMMA = 0.99            # discount factor
-TAU = 1e-3              # for soft update of target parameters
-LR_ACTOR = 1e-4         # learning rate of the actor 
-LR_CRITIC = 1e-3        # learning rate of the critic
-WEIGHT_DECAY = 0        # L2 weight decay
-LEARN_EVERY = 20        # update the networks 10 times after every 20 timesteps
-LEARN_NUMBER = 10       # update the networks 10 times after every 20 timesteps
-EPSILON = 1.0           # noise factor
-EPSILON_DECAY = 0.999999  # noise factor decay
+  <h4>Hyperparameters</h4>
+ Replay buffer size: 1000000<br />
+ Batch size: 128<br />
+ Gamma (discount factor): 0.99<br />
+ Tau (soft update of target parameters): 0.001<br />
+ Learning rate for actor: 0.0001<br />
+ Learning rate for critic: 0.001<br />
+ Weight decay: 0<br />
+ Noise: 1
+ Noise decay: 0.999999<br />
 
-n_episodes=1000         # maximum number of episodes to train
-max_t=1000              # maximum number of steps to train per episode,
-
-The Actor Neural Networks use the following architecture :
-
-Input Layer (33) ->
-Fully Connected Hidden Layer (400 nodes, Batch Normlization, relu activation) ->
-Fully Connected Hidden Layer (300 nodes, relu activation) ->
-Ouput Layer (4 nodes, tanh activation)
-
-The Critic Neural Networks use the following architecture :
-
-Input Layer (33) ->
-Fully Connected Hidden Layer (400 nodes, Batch Normlization, relu activation) ->
-Fully Connected Hidden Layer (300+4 nodes [including actions], relu activation) ->
-Ouput Layer (1 node, no activation)
-
+   <h4>Model</h4>
+- Actor<br />
+  The Neural Network has two hidden layers with 400 and 300 neurons, respectively. The activation function used is ReLU for the input and first layer and tanh for the output The output layer has 4 values which corresponds to the dimension of each action.<br />
+ - Critic<br />
+  The Neural Network has two hidden layers with 400 and 300 neurons, respectively. The activation function used is ReLU for the input and first layer and none for the output. The output layer has just one value which corresponds to the assesment made by the critic of the action chosen by the actor.<br />
+    
 
 <h2>Results</h2>
+
+
+  I implemented DDPG method and solved the environment. In order to improve the performance of the agents, some other methods and improvements can also be tried. <br />
+- More effort can be spent for hyperparameter optimization to improve results.<br />
+- Different algorithms can be implemented such as [A2C](https://medium.com/deeplearningmadeeasy/advantage-actor-critic-a2c-implementation-944e98616b), [A3C](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-8-asynchronous-actor-critic-agents-a3c-c88f72a5e9f2), [PPO](https://openai.com/blog/openai-baselines-ppo/) or [D4PG](https://arxiv.org/pdf/1804.08617.pdf) to compare the performance of training. <br />
+- Prioritized experience replay can also be tried to see if it improves the training time.<br />
+
