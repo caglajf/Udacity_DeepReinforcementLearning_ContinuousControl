@@ -42,10 +42,15 @@ The pseudocode of DDPG algorith can be found below.
 <h2>Results</h2>
 After implementing DDPG method, the score evolution can be seen below:
 
-The environment has been successfully solved in 2311 episodes.
+![log scores](https://user-images.githubusercontent.com/51778059/155745844-7f28bb5e-5987-4241-847d-d3a5d8791034.JPG)
+
+![plot new](https://user-images.githubusercontent.com/51778059/155745906-fa5cbb62-552f-44fc-905f-b6ca70085ccb.png)
+
+The environment has been successfully solved in 28 episodes.
 
 <h2>Ideas for Future Work</h2>
   I implemented DDPG method and solved the environment. In order to improve the performance of the agents, some other methods and improvements can also be tried. <br />
+  
 - More effort can be spent for hyperparameter optimization to improve results.<br />
 - Different algorithms can be implemented such as [A2C](https://medium.com/deeplearningmadeeasy/advantage-actor-critic-a2c-implementation-944e98616b), [A3C](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-8-asynchronous-actor-critic-agents-a3c-c88f72a5e9f2), [PPO](https://openai.com/blog/openai-baselines-ppo/) or [D4PG](https://arxiv.org/pdf/1804.08617.pdf) to compare the performance of training. <br />
 - Prioritized experience replay can also be tried to see if it improves the training time.<br />
